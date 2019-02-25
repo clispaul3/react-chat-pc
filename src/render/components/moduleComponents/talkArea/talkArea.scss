@@ -26,7 +26,8 @@
         .iconfont{
             position: absolute;
             right:20px;top:23px;
-            cursor:pointer;
+			cursor:pointer;
+			-webkit-app-region: no-drag;
         }
     }
     
@@ -35,6 +36,7 @@
 		@include text_ellipse;
 		font-size:16px;position:absolute;
 		top:20px;left:20px;
+		-webkit-app-region: no-drag;
 	}
 	
 	#send-message-area{
