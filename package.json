@@ -11,9 +11,9 @@
     "build:main": "webpack --mode=production --config webpack.main.config.js",
     "build": "electron-builder",
     "packager:mac": "electron-packager ./ 9号米仓 --out=./build --platform=darwin --app-version=1.0.0 --overwrite --icon=./icons/logo.icns",
-    "commit":"bash ./scripts/commit.sh",
-    "dev:bash":"bash ./scripts/dev.sh",
-    "build:bash":"bash ./scripts/build.sh"
+    "commit": "bash ./scripts/commit.sh",
+    "dev:bash": "bash ./scripts/dev.sh",
+    "build:bash": "bash ./scripts/build.sh"
   },
   "build": {
     "productName": "9号米仓",
