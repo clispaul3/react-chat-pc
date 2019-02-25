@@ -1,0 +1,96 @@
+{
+  "name": "9mc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config webpack.render.config.js",
+    "dev:electron": "electron .",
+    "build:render": "webpack --mode=production --config webpack.render.config.js",
+    "build:main": "webpack --mode=production --config webpack.main.config.js",
+    "build": "electron-builder",
+    "packager:mac": "electron-packager ./ 9号米仓 --out=./build --platform=darwin --app-version=1.0.0 --overwrite --icon=./icons/logo.icns",
+    "commit":"bash ./scripts/commit.sh",
+    "dev:bash":"bash ./scripts/dev.sh",
+    "build:bash":"bash ./scripts/build.sh"
+  },
+  "build": {
+    "productName": "9号米仓",
+    "appId": "com.example.yourapp",
+    "directories": {
+      "output": "builder"
+    },
+    "files": [
+      "dist/**/*"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "icons/logo.icns"
+    },
+    "win": {
+      "icon": "icons/logo.ico"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^1.0.1",
+    "electron": "^2.0.4",
+    "electron-builder": "^20.38.4",
+    "electron-packager": "^13.0.1",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.10.0",
+    "redux-devtools": "^3.4.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "axios": "^0.18.0",
+    "blueimp-md5": "^2.10.0",
+    "element-react": "^1.4.24",
+    "element-theme-default": "^1.4.13",
+    "fs": "0.0.1-security",
+    "install": "^0.12.2",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "qiniu": "^7.2.1",
+    "qiniu-js": "^2.5.3",
+    "react": "^16.6.1",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.6.1",
+    "react-redux": "^5.1.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "silly-datetime": "^0.1.2"
+  }
+}

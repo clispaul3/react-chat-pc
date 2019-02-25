@@ -1,0 +1,453 @@
+@import '@/style/common';
+@import '../../../assets/jqueryVideo/css/fz-video.css';
+.blank-default{
+  height:50px;
+}
+// 公共样式
+.message-container{
+    position:relative;
+    // border-bottom:$border_style;
+    .msg-sent-time{
+      color:$font_color_notice;text-align:center;
+      font-size:12px;height:30px;line-height:30px;
+    }
+    .text-message{
+      max-width:300px;padding:8px;
+      border-radius:5px;position:relative;
+      @include word_break;
+    }
+    .image-message{
+      position:relative;
+      img{
+        max-width: 202px;
+        max-height: 100px;
+        width: auto;height: auto;border-radius:5px;
+        border:1px solid rgba(155, 145, 145,0.1);
+        cursor:pointer;margin-top:10px;
+      }
+    }
+    .voice-message{
+      min-width:80px;
+      max-width:300px;
+      min-height:33px;
+      border-radius:5px;
+      margin-top:3px;
+      cursor: pointer;
+      position: relative;
+      p:first-child{
+        height:33px;
+        position: relative;
+      }
+      img{
+        width:16px;height:16px;
+        position:absolute;
+        top:9px;
+        display:none;
+      }
+      span.iconfont{
+        position: absolute;
+        top:8px;
+      }
+      .time{
+        position: absolute;
+        top:9px;
+      }
+      .listened-status{
+        display:block;
+        position:absolute;
+        height:5px;
+        width:5px;
+        border-radius:50%;
+        background:$font_color_warning;
+        top:15px;
+        right:-10px;
+      }
+      .text-content{
+        padding:0 10px;
+        padding-top:5px;
+        min-height:33px;
+        max-width:280px;
+        box-sizing:border-box;
+        @include word_break;
+        position: relative;
+        font-size:12px;
+        .icon-dengdai{
+          position:absolute;
+          left:50%;top:25%;
+          width:16px;height:16px;
+          display:inline-block;
+          transform:translate(-50%) rotate(0deg);
+          transition:all 0.36s;
+        }
+        .icon-fail{
+          color:$font_color_warning;
+          font-size:12px;
+        }
+      }
+    }
+    .gif-message,.emojigif-message{
+      position:relative;
+      img{
+        width:150px;height:150px;
+      }
+    }
+    .video-message{
+      height:150px;width:150px;
+      position: relative;
+      video{
+        padding:0px;margin:0px;
+        width:100%;height:100%;
+        object-fit:fill;
+        cursor: pointer;
+      }
+      span{
+        display: inline-block;
+        position: absolute;
+        top:43%;left:50%;
+        transform:translate(-50%);
+        cursor: pointer;
+        font-size:25px;
+        color:#fff;
+      }
+    }
+    .file-message{
+      max-width:300px;padding:8px;
+      border-radius:5px;position: relative;
+      cursor:pointer;
+      .size,.name{
+        color:#555;
+      }
+      .iconfont{
+        display:inline-block;
+        position:absolute;
+        top:8px;font-size:35px;
+      }
+      .size{
+        display:inline-block;
+        padding-top:5px;
+      }
+    }
+    .share-card-message{
+      padding:8px;border-radius:5px;
+      width:140px;position:relative;
+      cursor: pointer;border:$border_style;
+      img{
+        width:30px;height:30px;
+        border-radius:5px;
+      }
+      span{
+        max-width:80px;display:inline-block;
+        position: relative;
+        top:-10px;font-size:12px;
+      }
+      p{
+        font-size:10px;width:96%;
+        border-top:$border_style;
+        padding-top:3px;
+        color:$font_color_notice;
+      }
+    }
+    .share-card-url-message{
+      position:relative;
+      width:310px;height:95px;
+      border:$border_style;
+      border-radius:5px;
+      padding-bottom:10px;
+      cursor:pointer;
+      h3{
+        text-indent:10px;
+        line-height:30px;
+        width:300px;
+        @include text_ellipse;
+      }
+      p{
+        width:240px;height:66px;
+        @include text_ellipse;
+        white-space:pre-line;
+        padding:0px 10px 0px 10px;
+        box-sizing:border-box;
+        float:left;font-size:12px;
+        color:$font_color_notice;
+      }
+      img{
+        float:right;
+        border-radius:5px;
+        margin-right:10px;
+        min-width:50px;
+        max-width:60px;
+        max-height:60px;
+      }
+    }
+    .identity-notification-message-1{
+      border:$border_style;
+      width:230px;
+      border-radius:5px;
+      padding:10px;
+      position: relative;
+      left:50%;transform:translateX(-50%);
+      span{
+        display:inline-block;
+        width:30px;height:30px;
+        font-size:30px;
+        color:#5AB4FF;
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+      }
+      p{
+        width:190px;float:right;
+        @include word_break;
+        padding-left:5px;
+      }
+    }
+    .identity-notification-message-2{
+      border:$border_style;
+      width:360px;height:69px;
+      border-radius:5px;
+      position: relative;
+      left:50%;transform:translateX(-50%);
+      img{
+        height:100%;width:100%;
+      }
+    }
+    i.read-status{
+      position:absolute;font-size:10px;
+      font-style:normal;display:inline-block;
+      width:24px;height:12px;
+    }
+    .group-notification-message{
+      display:inline-block;
+      text-align:center;
+      font-size:12px;max-width:300px;
+      color:#fff;background:#ddd;
+      padding:4px 10px;
+      position:relative;left:50%;
+      transform:translateX(-50%);
+      border-radius:5px;margin:auto;
+      @include word_break;
+    }
+}
+
+// 来自我的消息
+.msg-from-me{
+  .user-portrait{
+    float:right;margin:0px 10px 0px 10px;
+  }
+  .el-checkbox{
+    position:absolute;
+    width:20px;
+    left:20px;
+    bottom:20%;
+  }
+  .text-message,.voice-message,.file-message{
+    float:right;
+    background:rgb(206,220,239);
+  }
+  .image-message{
+    float:right;
+    img{
+      float:right;
+    }
+  }
+  .file-message{
+    padding-left:50px;
+    .iconfont{
+      left:8px;
+      color:#fff;
+    }
+  }
+  .voice-message{
+    .iconfont{
+      right:12px;
+      transform:rotate(180deg);
+    }
+    img{
+      right:10px;
+    }
+    .time{
+      left:10px;
+    }
+    .text-content{
+      border-top:1px solid #ccc;
+    }
+  }
+  .gif-message{
+    float:right;
+  }
+  .video-message{
+    float:right;
+  }
+  .emojigif-message{
+    float:right;
+  }
+  .share-card-message{
+    float:right;
+    span{
+      position: relative;
+      left:10px;
+    }
+  }
+  .share-card-url-message{
+    float:right;
+  }
+  i.read-status{
+    bottom:5px;left:-25px;
+  }
+}
+// 来自好友的消息
+.msg-from-friend{
+  .user-portrait{
+    float:left;margin:0px 10px 0px 10px;
+  }
+  .el-checkbox{
+    position:absolute;
+    right:20px;
+    bottom:20%;
+    width:20px;
+  }
+  .text-message,.voice-message,.file-message{
+    float:left;
+    background:#EBEBEB;
+  }
+  .image-message{
+    float:left;
+    img{
+      float:left;
+    }
+  }
+  .file-message{
+    padding-right:50px;
+    .iconfont{
+      right:8px;
+      color:#fff;
+    }
+  }
+  .voice-message{
+    .iconfont{
+      right:8px;
+    }
+    img{
+      right:10px;
+      top:8px;
+    }
+    .time{
+      left:10px;
+    }
+    .text-content{
+      border-top:$border_style;
+    }
+  }
+  .gif-message{
+    float:left;
+  }
+  .video-message{
+    float:left;
+  }
+  .emojigif-message{
+    float:left;
+  }
+  .share-card-message{
+    float:left;
+    span{
+      position: relative;
+      left:10px;
+    }
+  }
+  .share-card-url-message{
+    float:left;
+  }
+  i.read-status{
+    bottom:5px;right:-30px;
+  }
+}
+// 新消息小图标
+.message-list{
+  .has-new-message{
+    position:absolute;
+    right:1px;bottom:5px;
+    cursor: pointer;
+    background:rgba(0,0,0,0.5);
+    padding:5px;opacity:0.6147;
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+    span{
+      color:#fff;font-size:12px;
+    }
+    .iconfont{
+      font-size:16px;
+    }
+  }
+}
+// 提醒认证提示
+.indentity-notice-countdown{
+  position:absolute;top:0px;font-size:12px;
+  background:#F5F5F5;height:47px;
+  color:#4A4A4A;width:100%;
+  box-sizing:border-box;
+  z-index:1;
+  span:first-child{
+    padding-left:18px;
+  }
+  span.time{
+    background:#4A4A4A;color:#fff;
+    padding:7px 0px;border-radius:5px;font-size:14px;
+    padding-right:4px;padding-left:1px;
+    i{
+      position:relative;top:1px;
+      padding:0 4px;font-weight:600;
+      line-height:28px;background:#fff;
+      color:#ff5a5a;font-size:18px;
+      font-style:normal;
+      display:inline-block;border-radius:3px;
+    }
+  }
+  span.notice{
+    cursor:pointer;line-height:46px;position:relative;top:8px;
+    &:hover::after{
+      content:'请在指定的时间内进行实人认证，聊天会受到限制';
+      display:block;position:absolute;top:19px;left:-170px;
+      width:270px;font-size:12px;background:rgba(57,57,57,0.8289);
+      padding:5px 10px;height:26px;line-height:26px;
+      color:#fff;border-radius:5px;font-weight:400;
+    }
+    &:hover>span.triangle{
+      display:block;
+    }
+  }
+  span.triangle{
+    position:absolute;top:-7px;transform:rotate(-90deg);left:9px;
+    display:none;color:rgba(57,57,57,0.8289) !important;
+  }
+  span.icon-guanbi{
+    float:right;margin-right:10px;line-height:47px;
+    cursor:pointer;
+  }
+}
+// 认证过期提示
+.over-time,.friend-identity{
+  position:absolute;top:0px;
+  background:#F5F5F5;height:30px;
+  width:100%;line-height:30px;
+  box-sizing:border-box;
+  background:#FFF9BC;
+  z-index:1;
+  span:first-child{
+    color:#FF5A5A;font-size:12px;
+    padding-left:15px;
+  }
+  .iconfont{
+    position: absolute;
+    right:20px;cursor: pointer;
+    top:2px;color:#000;
+  }
+}
+// 提醒好友认证提示
+.friend-identity{
+  z-index:1;
+  span:nth-child(2){
+    color:#5AB4FF;
+    cursor:pointer;
+    padding-left:20px;
+  }
+}
+

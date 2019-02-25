@@ -1,0 +1,2 @@
+global.$videowindow
+global.$imagewindow

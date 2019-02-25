@@ -1,0 +1,228 @@
+// 基础样式
+$box_shadow:0 5px 15px rgba(0,0,0,.3);
+$border_style:1px solid rgba(226,226,226,.5);
+$font_color_default:#333;
+$font_color_notice:#8b8b8b;
+$font_color_success:#7595F1;
+$hover_bagcolor:#eeeff2;
+$font_color_warning:rgb(236,115,97);
+
+@mixin btn_style {
+    font-size:14px;
+    padding:3px 8px;
+    outline:0 none;
+    border:1px solid #ddd;
+    border-radius:3px;
+    cursor: pointer;
+}
+
+@mixin text_ellipse {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+@mixin word_break {
+    hyphens:auto;
+    line-break: anywhere;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+@mixin title_style {
+    height:36px;
+    background:#F0F2F5;
+    line-height:36px;
+    font-size:14px;
+}
+
+@mixin portrait_default {
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:block;
+}
+@mixin portrait_mini {
+    width:36px;
+    height:36px;
+	display:block;
+    border-radius:50%;
+}
+@mixin portrait_name_default {
+    @include portrait-default;
+    line-height:44px;
+    color:#fff;
+    font-size:20px;
+    text-align:center;
+}
+@mixin portrait_name_mini {
+    @include portrait-mini;line-height:36px;font-size:14px;text-align:center;color:#fff;
+}
+@mixin unread_count{
+	color:#fff;position:absolute;background:red;
+	font-size:12px;padding:0px 4px;border:1px solid #fff;
+	border-radius:10px;
+}
+@mixin center_x {
+    left:50%;
+    transform:translateX(-50%);
+}
+@mixin clear_content {
+    position: absolute;top:7px;left:196px;z-index:2000;
+    cursor:pointer;
+    color:$font_color_notice;
+    display:block;
+    font-size:13px;
+}
+// 按钮样式
+.btn-default{
+    @include btn_style;
+    background:#fff;
+    color:$font_color_default;
+}
+.btn-success{
+    @include btn_style;
+    background:#7595F1;
+    color:#fff;
+}
+// 头像样式
+.avatar-portrait-mini,.nickname-portrait-mini{
+    display:inline-block;width:36px;height:36px;border-radius:50%;cursor:pointer;
+}
+.avatar-portrait-mini,.avatar-portrait-primary{
+    font-size:0px;margin:0px;
+}
+.nickname-portrait-mini{
+    line-height:36px;text-align:center;color:#fff;
+}
+.avatar-portrait-primary,.nickname-portrait-primary{
+    display:inline-block;width:44px;height:44px;border-radius:50%;cursor:pointer;
+}
+.nickname-portrait-primary{
+    line-height:44px;text-align:center;color:#fff;
+}
+// 列表样式
+.list-style{
+    position:relative;cursor:pointer;height:70px;
+    width:242px;border-bottom:$border_style;
+    box-sizing:border-box;
+    p.nickname{
+        position:absolute;bottom:25px;left:70px;
+        font-size:12px;max-width:100px;
+        @include text_ellipse;
+    }
+}
+.special-list-style{
+    height:90px;
+    p.first-letter{
+        height:30px;padding-left:30px;line-height:30px;
+        color:#827B7B;
+    }
+    
+    .user-portrait{
+        margin-top:0px !important;
+    }
+}
+// 标题样式
+.p-title{
+    height:30px;background:#F0F2F5;
+    line-height:30px;
+    span.notice{
+        margin-left:13px;float:left;font-weight:600;
+    }
+    span.iconfont{
+        margin-right:10px;float:right;cursor:pointer;
+        margin-top:1px;
+    }
+}
+label.el-checkbox{
+    position:absolute;right:20px;bottom:22px;
+}
+.el-checkbox__inner{
+    border-radius:50% !important;
+}
+span.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #FF5A5A;
+    border-color: #FF5A5A;
+}
+.el-input__inner{
+    background-color:#f8f8f8 !important;
+    height:28px !important;outline:none !important;
+    width:215px !important;font-size:14px;
+    padding-left:30px !important;
+    padding-right:20px !important;
+}
+div.el-input{
+    width:215px;
+    position:absolute;
+}
+/* 清除内外边距 */
+html,body, #app, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li,pre,fieldset, button, input, textarea, 
+th, td, span, i { 
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    font-size:14px;
+    color:#333;
+    font-family: 
+    "Microsoft YaHei", 
+    "Arial", 
+    "Helvetica", 
+    "sans-serif",
+    "SimSun";
+}
+html,body{
+    width:100%;height:100%;
+    overflow: hidden;
+}
+// 清除浮动
+.clearfix:after{
+    content: "020"; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;  
+}
+
+.fr{
+    float:right;
+}
+.fl{
+    float:left;
+}
+
+// 滚动条样式
+.overflow-scroll{
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.overflow-scroll::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 5px;
+    height: 5px;
+}
+.overflow-scroll::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;max-height:30px;
+    background:#fff;
+    opacity:0;
+}
+.overflow-scroll::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 10px;
+    background:#fff;;
+}
+.overflow-scroll:hover::-webkit-scrollbar-thumb{
+    background:#ddd;
+}
+// 添加备注输入框
+.add-remark-input{
+    width:242px;outline:none;
+    padding-top:10px;padding-bottom:10px;
+    padding-left:10px;margin-left:20px;
+    margin-top:20px;border:1px solid #D7D2D2;
+    border-radius:10px;
+}
+
+#app,.page-index{
+    position:absolute;
+    right:0;left:0;top:0;bottom:0;
+    width:100%;height:100%;
+}

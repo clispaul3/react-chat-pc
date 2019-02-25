@@ -1,0 +1,20 @@
+@import '@/style/common';
+.modal-clear-message{
+	position:fixed;background:#fff;
+	box-shadow:$box_shadow;display:none;
+	width:280px;height:190px;
+	p.notice{
+		text-align:center;width:100%;
+		margin-top:40px !important;
+	}
+	button{
+		position: absolute;
+		bottom:20px;
+	}
+	.btn-success{
+		right:160px;
+	}
+	.btn-default{
+		right:88px;
+	}
+}

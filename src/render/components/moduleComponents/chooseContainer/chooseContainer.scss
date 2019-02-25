@@ -1,0 +1,39 @@
+@import '@/style/common';
+#choose-container{
+    position: fixed;top:61px;left:100px;z-index:1000;
+    box-shadow:$box_shadow;width:539px;height:456px;
+    background:#fff;
+    display:none;
+    .btn-success{
+        position: absolute;bottom:20px;right:118px;
+    }
+    .btn-default{
+        position: absolute;bottom:20px;right:50px;
+    }
+    ul{
+        display:block;
+    }
+    .modal-create-group,.modal-create-group-fail{
+        left:220px;position: absolute;
+        box-shadow:$box_shadow;
+        display:none;
+        top:50%;left:50%;background:#fff;
+        transform: translate(-50%,-50%);
+        height:180px;width:300px;
+        z-index:2;
+        p.not-empty{
+            color:#FF5A5A;display:none;margin-top:10px;
+            text-align:center;font-size:14px;
+        }
+    }
+    .modal-create-group-fail{
+        display:block;
+        p:nth-child(2){
+            text-align:center;
+            margin-top:20px;
+        }
+        .btn-success{
+            right:127px;
+        }
+    }
+}

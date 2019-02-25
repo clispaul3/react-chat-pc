@@ -1,0 +1,24 @@
+@import '@/style/common';
+.zoom-window { 
+    -webkit-app-region: no-drag;
+    position: fixed;
+    right:0px;
+    top:0px;
+    display:flex;
+    z-index: 100000;
+    span{
+        flex:1;
+        padding:3px 4px;
+        cursor: pointer;
+    }
+    .icon-zuixiaohua,.icon-zuidahua,.icon-zhiding{
+        &:hover{
+            background: $hover_bagcolor;
+        }
+    }
+    .icon-guanbi{
+        &:hover{
+            background: $font_color_warning;
+        }
+    }
+}

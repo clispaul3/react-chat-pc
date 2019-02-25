@@ -1,0 +1,27 @@
+@import '@/style/common';
+.set-input{
+	height:28px;width:180px;position:absolute;top:0px;right:15px;
+	box-sizing:border-box;
+	.el-input{
+		width:180px;box-sizing:border-box;
+	}
+	.el-input__inner,span{
+		width:180px !important;background:#fff !important;
+		border:1px solid rgba(228,228,288,0);padding:0px !important;box-sizing:border-box;
+		padding-left:5px !important;
+		@include text_ellipse;
+	}
+	span{
+		display:inline-block;padding:3px !important;
+	}
+	&:hover{
+		.el-input__inner{
+			border:1px solid #ddd;
+		}
+	}
+}
+.group-notice{
+	span{
+		font-size:13px;
+	}
+}

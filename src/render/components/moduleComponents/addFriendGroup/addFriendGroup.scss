@@ -1,0 +1,68 @@
+@import '@/style/common';
+.modal-add-friend-group{
+    width:300px;height:200px;
+    position:fixed;background:#fff;
+    box-shadow:$box_shadow; 
+    .toggle-btn{
+        height:30px;width:100%;
+        display:flex;margin-top:10px;
+        span{
+            flex:1;text-align:center;
+            cursor: pointer;font-size:13px;
+            line-height:30px;
+        }
+        .current{
+            color:$font_color_success;
+        }
+    }
+    >button{
+        position: absolute;
+        right:15px;font-size:12px;
+        top:82px;
+    }
+    .el-input{
+        @include center_x;
+        top:80px;left:41%;
+    }
+    .no-result{
+        position:absolute;
+        @include center_x;
+        bottom:15px;
+        color:$font_color_warning;
+        font-size:12px;
+        display:none;
+    }
+    .search-result{
+        position: absolute;
+        height:44px;width:100%;
+        bottom:10px;
+        >.user-portrait{
+            margin-left:15px;
+        }
+        .nickname{
+            position:absolute;
+            max-width:120px;
+            @include text_ellipse;
+            left:80px;
+            top:15px;
+            font-size:12px;
+        }
+        .operation{
+            position:absolute;
+            right:18px;top:10px;
+            border:$border_style;
+            border-radius:5px;
+            padding:3px 5px;
+            cursor: pointer;
+            font-size:12px;
+        }
+    }
+    .icon-shousuo{
+        position: absolute;top:87px;left:23px;z-index:2000;
+        color:#ABAAA9;font-size:14px;
+    }
+    >.icon-guanbi1{
+        @include clear_content;
+        left:210px;top:88px;
+    }
+}

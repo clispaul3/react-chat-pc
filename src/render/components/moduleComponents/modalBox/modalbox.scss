@@ -1,0 +1,151 @@
+@import '@/style/common';
+.modal-before-five-days-msg,.send-message-fail,.modal-no-transmit-message{
+  width:300px;height:170px;
+  position:fixed;background:#fff;
+  box-shadow:$box_shadow;
+  p.notice{
+    text-align:center;margin-top:20px;
+  }
+  button{
+    position:absolute;bottom:20px;right:124px;
+  }
+}
+.send-message-fail {
+    width:320px;
+    p.notice{
+        @include word_break;
+        padding:0 10px;
+    }
+    button{
+        right:128px;
+    }
+}
+.box-play-video-msg{
+    width:400px;
+    position:fixed;background:#fff;
+    box-shadow:$box_shadow;
+    max-height:80%;
+    #container-video{
+        width:100%;height:100%;
+        video{
+            object-fit:fill;height:auto;
+            position:relative;
+        }
+    }
+    #playIcon{
+        color:#fff;
+    }
+}
+.box-handle-friend{
+    width:300px;height:170px;
+    position:fixed;background:#fff;
+    box-shadow:$box_shadow; 
+    .resolve,.refuse{
+        position:absolute;
+        bottom:20px;
+        cursor:pointer;
+        border:$border_style;
+        border-radius:5px;
+        padding:3px 8px;
+    }
+    .resolve{
+        right:80px;color:#fff;
+        background:#7595F1;
+    }
+    .refuse{
+        left:80px;
+    }
+    .add-reason{
+        text-align:center;
+        margin-top:20px;
+        padding:0 15px;
+        box-sizing:border-box;
+    }
+}
+.resolve-friend-request,.reject-friend-request,
+  .waiting-friend-response,.select-more-one-message{
+    width:200px;height:170px;
+    position:fixed;background:#fff;
+    box-shadow:$box_shadow; 
+    .icon-notice,.content{
+        position: absolute;
+        left:50%;top:35%;
+        transform:translate(-50%);
+    }
+    .icon-notice{
+        font-size:30px;
+    }
+    .content{
+        top:60%;
+    }
+}
+.select-more-one-message{
+    .content{
+        display:block;
+        width:120px;
+        top:40% !important;
+    }
+}
+.resolve-friend-request{
+    .icon-Group-{
+        color:#FDCB3F;
+    }
+}
+.reject-friend-request{
+    .icon-Group{
+        color:$font_color_notice;
+    }
+}
+.waiting-friend-response{
+    .icon-dengdai{
+        display:inline-block;
+        transition:all 0.3s;
+        color:#58bc58;
+    }
+}
+.add-friend-reason{
+    width:300px;height:150px;
+    position:fixed;background:#fff;
+    box-shadow:$box_shadow; 
+    .el-input{
+        top:50px;width:260px;
+        @include center_x;
+        input{
+            width:260px !important;
+            padding-left:10px !important;
+        }
+    }
+    >button{
+        position: absolute;
+        bottom:20px;
+        @include center_x;
+    }
+    >.icon-guanbi1{
+        @include clear_content;
+        top:58px;left:260px;
+    }
+}
+.box-gif-list{
+    display:none;
+    width:300px;
+    height:250px;
+    box-shadow: $box_shadow;
+    position:absolute;
+    bottom:30px;background:#fff;
+    border-left:0 none;padding:10px;
+    border-top-right-radius:5px;
+    overflow:hidden;
+}
+.zoom-avatar{
+    display:none;
+    width:300px;height:300px;
+    position:fixed;background:#fff;
+    box-shadow:$box_shadow; 
+    img{
+        width:250px;
+        height:250px;
+        border-radius:50%;
+        margin-left:25px;
+        margin-top:10px;
+    }
+}

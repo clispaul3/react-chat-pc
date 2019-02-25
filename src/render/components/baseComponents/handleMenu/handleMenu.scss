@@ -1,0 +1,15 @@
+@import '@/style/common';
+.handle-menu{
+    position: fixed;
+    display:none;
+    border:$border_style;
+    li{
+        height:30px;line-height:30px;
+        padding:0 10px;background:#fff;
+        cursor:pointer;
+        &:hover{
+            background:#ddd;
+            color:#fff;
+        }
+    }
+}

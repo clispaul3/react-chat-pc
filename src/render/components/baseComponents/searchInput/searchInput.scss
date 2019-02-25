@@ -1,0 +1,16 @@
+@import '@/style/common';
+#search-input{
+    position:relative;width:215px;height:28px;margin:13px;
+    .icon-shousuo{
+        position: absolute;top:7px;left:8px;z-index:2000;
+        color:#ABAAA9;font-size:14px;
+    }
+    .icon-guanbi1{
+        @include clear_content;
+    }
+	.el-input{
+		.el-input__inner{
+			font-size:12px;
+		}
+	}
+}

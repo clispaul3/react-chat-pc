@@ -1,0 +1,111 @@
+@import '@/style/common';
+#friend-list{
+    width:242px;
+    height:100%;
+    position: relative;
+    // z-index:600;
+    >div {
+        div:nth-child(3){
+            right:0px !important;
+        }
+    }
+    .toggle{
+        height:30px;line-height:30px;
+        padding-left:26px;cursor:pointer;
+        position:relative;
+        span:nth-child(1){
+            display:inline-block;transition:all 0.3s;
+            font-size:14px;
+        }
+        span:nth-child(2){
+            margin-left:10px;
+        }
+        span:nth-child(3){
+            float:right;margin-right:15px;
+            font-size:12px;
+        }
+        .unadd-count{
+            @include unread_count;
+            position:absolute;
+            right:-2px;top:5px;
+            line-height:16px;
+        }
+    }
+    ul{
+        li{
+            cursor:pointer;position: relative;
+            .user-portrait{
+                margin:13px;
+            }
+            &:hover{
+                background:$hover_bagcolor;
+            }
+            .icon-guanbi{
+                position: absolute;bottom:25px;left:200px;
+                cursor:pointer;background:#ccc;
+                border-radius:50%;display:block;height:16px;width:16px;
+                font-size:13px;text-align:center;line-height:18px;color:#fff;
+            }
+            
+        }
+        .list-style-new-friend{
+            p.nickname{
+                bottom:35px;
+            }
+            .add-reason{
+                position:absolute;
+                bottom:15px;left:69px;
+                color:$font_color_notice;
+                font-size:12px;
+                display:inline-block;
+                max-width:100px;
+                @include text_ellipse;
+            }
+            .add-status{
+                position: absolute;
+                top:20px;right:20px;
+                font-size:13px;
+                cursor: pointer;
+            }
+            .add-btn{
+                border:$border_style;
+                border-radius:5px;
+                color:#3FA8FF;
+                padding:3px 5px;top:15px;
+            }
+            .operation-time{
+                font-size:10px;
+                color:$font_color_notice;
+                position:absolute;right:20px;
+                bottom:15px;
+                display:inline-block;
+                width:40px;text-align:center;
+            }
+        }
+    }
+    .page-turning{
+        height:20px;position:relative;
+        line-height:20px;padding-bottom:8px;
+        border-bottom:$border_style;
+        padding-top:8px;
+        .iconfont{
+            cursor:pointer;
+            font-size:12px;
+            padding:0px 5px;
+            position:absolute;
+            border:$border_style;
+            border-radius:5px;
+        }
+        .previous{
+            left:80px;
+        }
+        .next{
+            right:80px;
+        }
+        .current-page{
+            position:absolute;top:9px;
+            left:50%;color:#3FA8FF;
+            transform:translateX(-50%);
+        }
+    }
+}

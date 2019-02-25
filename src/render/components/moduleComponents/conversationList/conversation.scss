@@ -1,0 +1,63 @@
+@import '@/style/common';
+.conversation-:not(.last-blank){
+	height:70px;cursor:pointer;box-sizing:border-box;
+	border-bottom:$border_style;position:relative;
+	&:hover{
+		background:$hover_bagcolor;
+	}
+	.user-portrait{
+		margin:13px 0 13px 10px;
+	}
+	.nickname{
+		position:absolute;top:13px;left:70px;
+		width:100px;font-size:14px;
+		@include text_ellipse;
+	}
+	.sent-time{
+		position:absolute;right:13px;top:15px;
+		color:$font_color_notice;font-size:12px;
+	}
+	.unread-count{
+		@include unread_count;
+		bottom:12px;right:13px;
+	}
+	.no-tips{
+		display:none;
+	}
+	.no-tips-notice{
+		position: absolute;
+		background:red;
+		height:6px;
+		width:6px;
+		border-radius:50%;
+		top:33px;left:50px;
+	}
+	.icon-miandarao{
+		position:absolute;
+		color:#FDCB3F;
+		right:13px;bottom:12px;
+	}
+	>p{
+		position:absolute;left:70px;top:40px;
+		width:130px;@include text_ellipse;
+		span{
+			color:$font_color_notice;font-size:12px;
+			max-width:130px;display:inline-block;
+		}
+	}
+	.con-handle-menu{
+		width:112px;
+		display:none;height:92px;
+		position: fixed;
+	}
+}
+.is-top{
+	background:rgba(240,240,240,0.5);
+}
+.current-con{
+	background:rgb(220,220,220);
+}
+
+#conversation-list{
+
+}
