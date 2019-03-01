@@ -1,0 +1,14 @@
+.DS_Store
+dist/electron/*
+dist/*
+dist/web/*
+builder/*
+!build/icons
+node_modules/
+npm-debug.log
+npm-debug.log.*
+thumbs.db
+!.gitkeep
+package.lock.json
+test.js
+webpack.main.config.js

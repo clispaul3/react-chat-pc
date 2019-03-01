@@ -15,6 +15,7 @@
     }
     .conversation,.mail-list,.create-group,.app-setting{
         text-align:center;
+        -webkit-app-region: no-drag;
         >span.iconfont{
             color:#96A4CA;font-size:25px;
             cursor:pointer;
